@@ -22,6 +22,6 @@ Sua missão é atuar como um engenheiro de qualidade para encontrar essas fraque
     - Para cada mutante sobrevivente, entenda por que ele não foi "morto".
     - Adicione novos testes em `__tests__/operacoes.test.js` focados em asserções mais específicas para matar esses mutantes.
 5.  **Validação Final:**
-    - Rode o Stryker novamente e verifique se sua pontuação de mutação aumentou, idealmente para mais de 95%.
+    - Rode o Stryker novamente e verifique se sua pontuação de mutação aumentou, idealmente para mais de 98%.
 
 Siga as instruções do documento do trabalho para a entrega final. Boa sorte!
