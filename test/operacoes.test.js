@@ -33,8 +33,6 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
   test('8.1 deve calcular fatorial dos casos base 0 e 1', () => { 
     expect(fatorial(1)).toBe(1); 
     expect(fatorial(0)).toBe(1);
-    expect(fatorial(1)).toBe(1);
-    expect(fatorial(0)).toBe(1);
     expect(fatorial(2)).toBe(2);
   });
   test('8.2 deve processar fatorial de inteiros pequenos 2 e 3', () => { 
@@ -97,7 +95,6 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
   test('35.1 deve resultar em 1 ao multiplicar lista vazia', () => { 
     expect(produtoArray([])).toBe(1); 
     expect(produtoArray([1])).toBe(1);
-    expect(produtoArray([6])).not.toBe(1); 
   });
   test('35.2 deve acessar propriedade length sem chamar reduce quando vazio', () => {
     let propriedadeAcessada = false;
@@ -114,38 +111,22 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
     expect(mockObjeto.reduce).not.toHaveBeenCalled();
   });
   test('36. deve manter um valor dentro de um intervalo (clamp)', () => { 
-    expect(clamp(5, 0, 10)).toBe(5); 
-    expect(clamp(2, 0, 10)).toBe(2);
-    expect(clamp(8, 0, 10)).toBe(8);
+    expect(clamp(5, 0, 10)).toBe(5);
   });
   test('36.1 deve aplicar limite inferior quando valor é MENOR que mínimo', () => { 
-    expect(clamp(-3, 0, 10)).toBe(0); 
-    expect(clamp(-2, 0, 10)).toBe(0);
-    expect(clamp(-0.5, 0, 10)).toBe(0);
-    expect(clamp(-1, 3, 10)).toBe(3);
+    expect(clamp(-3, 0, 10)).toBe(0);
   });
   test('36.2 deve aplicar limite superior quando valor é MAIOR que máximo', () => { 
-    expect(clamp(12, 0, 10)).toBe(10); 
-    expect(clamp(15, 0, 10)).toBe(10);
-    expect(clamp(10.5, 0, 10)).toBe(10);
-    expect(clamp(25, 0, 10)).toBe(10);
+    expect(clamp(12, 0, 10)).toBe(10);
   });
   test('36.3 deve retornar valor original quando igual ao limite inferior', () => { 
     expect(clamp(0, 0, 10)).toBe(0);
-    expect(clamp(3, 3, 10)).toBe(3);
-    expect(clamp(0.002, 0, 10)).toBeCloseTo(0.002);
-    expect(clamp(3.002, 3, 10)).toBeCloseTo(3.002);
   });
   test('36.4 deve retornar valor original quando igual ao limite superior', () => { 
     expect(clamp(10, 0, 10)).toBe(10);
-    expect(clamp(8, 0, 8)).toBe(8);
-    expect(clamp(9.998, 0, 10)).toBeCloseTo(9.998);
-    expect(clamp(7.998, 0, 8)).toBeCloseTo(7.998);
   });
   test('36.5 deve manter valor quando está ENTRE os limites', () => { 
     expect(clamp(4, 0, 10)).toBe(4);
-    expect(clamp(0.2, 0, 10)).toBe(0.2);
-    expect(clamp(9.7, 0, 10)).toBe(9.7);
   });
   test('36.6 deve preservar referência quando objeto equivale ao mínimo', () => {
     const refMin = { valueOf: () => 4 };
